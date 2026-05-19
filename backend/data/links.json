@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "nome": "Santinho Spot",
+    "url": "https://autode.sk/43d6Kk3",
+    "urlCompleta": "https://viewer.autodesk.com/designviews",
+    "dataExpiracao": "2026-05-23T14:56:49.530Z",
+    "dataCriacao": "2026-05-18T14:56:49.530Z",
+    "ultimaAtualizacao": "2026-05-18T14:56:49.530Z",
+    "status": "expiring"
+  },
+  {
+    "id": "2",
+    "nome": "Santo Antônio Spot",
+    "url": "https://autode.sk/4wIJZCj",
+    "urlCompleta": "https://viewer.autodesk.com/designviews",
+    "dataExpiracao": "2026-06-17T14:56:49.530Z",
+    "dataCriacao": "2026-05-18T14:56:49.530Z",
+    "ultimaAtualizacao": "2026-05-18T14:56:49.530Z",
+    "status": "active"
+  }
+]

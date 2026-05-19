@@ -1,0 +1,24 @@
+[
+  {
+    "id": "1",
+    "nome": "Santinho Spot",
+    "url": "https://autode.sk/43d6Kk3",
+    "thumbnailUrl": "",
+    "dataExpiracao": "2026-05-25T00:00:00.000Z",
+    "dataCriacao": "2026-05-18T15:00:00.000Z",
+    "ultimaAtualizacao": "2026-05-18T15:00:00.000Z",
+    "status": "expiring",
+    "observacoes": ""
+  },
+  {
+    "id": "2",
+    "nome": "Santo Antônio Spot",
+    "url": "https://autode.sk/4wIJZCj",
+    "thumbnailUrl": "",
+    "dataExpiracao": "2026-06-17T00:00:00.000Z",
+    "dataCriacao": "2026-05-18T15:00:00.000Z",
+    "ultimaAtualizacao": "2026-05-18T15:00:00.000Z",
+    "status": "active",
+    "observacoes": ""
+  }
+]

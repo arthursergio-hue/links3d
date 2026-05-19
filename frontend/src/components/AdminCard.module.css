@@ -1,0 +1,284 @@
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+  border: 1px solid var(--gray-200);
+  font-size: 0.85rem;
+}
+
+.card:hover {
+  box-shadow: var(--shadow);
+}
+
+.card.active {
+  border-left: 3px solid var(--success);
+}
+
+.card.expiring {
+  border-left: 3px solid var(--warning);
+}
+
+.card.expired {
+  border-left: 3px solid var(--danger);
+  opacity: 0.85;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: var(--gray-50);
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: var(--radius-xs);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.badgeActive {
+  background: rgba(0, 198, 138, 0.15);
+  color: #00996F;
+}
+
+.badgeExpiring {
+  background: rgba(255, 184, 0, 0.15);
+  color: #CC9300;
+}
+
+.badgeExpired {
+  background: rgba(230, 57, 70, 0.15);
+  color: #CC3A47;
+}
+
+.actions {
+  display: flex;
+  gap: 4px;
+}
+
+.actionBtn {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  color: var(--gray-500);
+  padding: 6px;
+  border-radius: var(--radius-xs);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actionBtn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(0, 160, 227, 0.05);
+}
+
+.searchBtn {
+  color: var(--gray-400);
+}
+
+.searchBtn:hover {
+  border-color: var(--warning);
+  color: var(--warning);
+}
+
+.thumbnail {
+  height: 100px;
+  background: var(--gray-100);
+  overflow: hidden;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnailPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-400);
+}
+
+.content {
+  padding: 12px;
+}
+
+.title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.meta {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+.metaItem.active { color: var(--success); }
+.metaItem.expiring { color: var(--warning); }
+.metaItem.expired { color: var(--danger); }
+
+.urlRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  background: var(--gray-50);
+  border-radius: var(--radius-xs);
+  font-size: 0.7rem;
+  color: var(--gray-500);
+}
+
+.url {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.copyBtn {
+  background: var(--gray-200);
+  color: var(--gray-600);
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  font-size: 0.65rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.copyBtn:hover {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.footer {
+  padding: 10px 12px;
+  background: var(--gray-50);
+  border-top: 1px solid var(--gray-100);
+}
+
+.adminActions {
+  display: flex;
+  gap: 6px;
+}
+
+.extendBtn,
+.editBtn,
+.deleteBtn {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  padding: 6px 10px;
+  border-radius: var(--radius-xs);
+  color: var(--gray-500);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+}
+
+.extendBtn {
+  flex: 1;
+  justify-content: center;
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+
+.extendBtn:hover {
+  background: var(--accent-dark);
+}
+
+.editBtn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.deleteBtn:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.deleteBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.editDate {
+  display: flex;
+  gap: 4px;
+}
+
+.dateInput {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-xs);
+  font-size: 0.75rem;
+}
+
+.dateInput:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.saveBtn {
+  background: var(--success);
+  color: var(--white);
+  padding: 6px 10px;
+  border-radius: var(--radius-xs);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.cancelBtn {
+  background: var(--gray-300);
+  color: var(--gray-600);
+  padding: 6px 10px;
+  border-radius: var(--radius-xs);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 480px) {
+  .card {
+    font-size: 0.8rem;
+  }
+
+  .thumbnail {
+    height: 80px;
+  }
+}

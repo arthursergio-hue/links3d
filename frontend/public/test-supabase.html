@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testar Supabase</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 { color: #333; }
+    .bucket {
+      background: white;
+      padding: 20px;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .bucket h3 { margin: 0 0 10px 0; color: #00A0E3; }
+    .images { display: flex; flex-wrap: wrap; gap: 10px; }
+    .image { width: 100px; height: 100px; object-fit: cover; border-radius: 4px; border: 2px solid #eee; }
+    .image:hover { border-color: #00A0E3; }
+    .error { color: red; }
+    .loading { color: #666; }
+    .success { color: green; }
+  </style>
+</head>
+<body>
+  <h1>🎯 Teste de Conexão Supabase</h1>
+  <div id="result"></div>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+    const supabaseUrl = 'https://ogkporckvobptynpnhvi.supabase.co';
+    const supabaseKey = 'szi_key_FrjkbE_DXrKjA7rNlEpDQtcJ0hcAPm9pNsreuYobdQk';
+
+    const result = document.getElementById('result');
+
+    async function test() {
+      result.innerHTML = '<p class="loading">🔄 Conectando ao Supabase...</p>';
+
+      try {
+        const supabase = createClient(supabaseUrl, supabaseKey);
+
+        // Listar buckets
+        result.innerHTML += '<h2>1. Listando Buckets...</h2>';
+        const { data: buckets, error: bucketError } = await supabase.storage.listBuckets();
+
+        if (bucketError) {
+          result.innerHTML += `<p class="error">❌ Erro: ${bucketError.message}</p>`;
+        } else {
+          result.innerHTML += `<p class="success">✅ ${buckets.length} buckets encontrados</p>`;
+
+          for (const bucket of buckets) {
+            result.innerHTML += `<div class="bucket"><h3>📁 ${bucket.name}</h3>`;
+
+            // Listar arquivos do bucket
+            const { data: files, error: filesError } = await supabase.storage.from(bucket.name).list('', { limit: 50 });
+
+            if (filesError) {
+              result.innerHTML += `<p class="error">Erro: ${filesError.message}</p>`;
+            } else if (files.length === 0) {
+              result.innerHTML += '<p>Nenhuma imagem</p>';
+            } else {
+              result.innerHTML += '<div class="images">';
+              for (const file of files) {
+                if (file.name && !file.name.includes('/')) {
+                  const { data: urlData } = supabase.storage.from(bucket.name).getPublicUrl(file.name);
+                  result.innerHTML += `<img src="${urlData.publicUrl}" alt="${file.name}" class="image" title="${file.name}">`;
+                }
+              }
+              result.innerHTML += '</div>';
+            }
+
+            result.innerHTML += '</div>';
+          }
+        }
+
+        result.innerHTML += '<h2 style="margin-top:30px">2. Teste concluído!</h2>';
+      } catch (e) {
+        result.innerHTML += `<p class="error">❌ Erro geral: ${e.message}</p>`;
+      }
+    }
+
+    test();
+  </script>
+</body>
+</html>
