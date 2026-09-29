@@ -3,13 +3,13 @@ import { Header } from './components/Header';
 import { ClienteCard } from './components/ClienteCard';
 import { AdminCard } from './components/AdminCard';
 import { EmpreendimentoForm } from './components/EmpreendimentoForm';
-import { FilterBar } from './components/FilterBar';
+import { FilterBar, CapaFilter, SortOrder } from './components/FilterBar';
 import { LoginModal } from './components/LoginModal';
 import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { LoadingScreen } from './components/LoadingScreen';
 import { useEmpreendimentos } from './hooks/useEmpreendimentos';
-import { Empreendimento } from './types';
+import { CreateEmpreendimentoInput, Empreendimento } from './types';
 import styles from './App.module.css';
 
 // Tempo mínimo da tela de carregamento, para o slideshow não piscar quando a API responde rápido.
@@ -22,8 +22,9 @@ function App() {
   const [showForm, setShowForm] = useState(false);
   const [editingEmpreendimento, setEditingEmpreendimento] = useState<Empreendimento | null>(null);
   const [showLogin, setShowLogin] = useState(false);
-  const [filter, setFilter] = useState<'all' | 'active' | 'expiring' | 'expired'>('all');
   const [search, setSearch] = useState('');
+  const [capa, setCapa] = useState<CapaFilter>('all');
+  const [sort, setSort] = useState<SortOrder>('az');
   const [minSplashDone, setMinSplashDone] = useState(false);
   const [splash, setSplash] = useState<'visible' | 'exiting' | 'hidden'>('visible');
 
@@ -42,18 +43,29 @@ function App() {
     return () => clearTimeout(timer);
   }, [splash]);
 
-  const filteredEmpreendimentos = empreendimentos.filter(item => {
-    const matchesFilter = filter === 'all' || item.status === filter;
-    const matchesSearch = item.nome.toLowerCase().includes(search.toLowerCase());
-    return matchesFilter && matchesSearch;
-  });
+  const normalize = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  const query = normalize(search.trim());
 
-  const handleAddEmpreendimento = async (data: { nome: string; url: string; thumbnailUrl?: string; dataExpiracao: string; observacoes?: string }) => {
+  // Público: busca só pelo nome. Admin: também por link/observação, com filtro de capa e ordenação.
+  const filteredEmpreendimentos = empreendimentos
+    .filter(item => {
+      const campos = isAdmin ? [item.nome, item.url, item.observacoes ?? ''] : [item.nome];
+      const matchesSearch = !query || campos.some(campo => normalize(campo).includes(query));
+      const matchesCapa = !isAdmin || capa === 'all' || (capa === 'com') === Boolean(item.thumbnailUrl);
+      return matchesSearch && matchesCapa;
+    })
+    .sort((a, b) => {
+      if (!isAdmin || sort === 'az') return a.nome.localeCompare(b.nome, 'pt-BR');
+      if (sort === 'za') return b.nome.localeCompare(a.nome, 'pt-BR');
+      return new Date(b.ultimaAtualizacao).getTime() - new Date(a.ultimaAtualizacao).getTime();
+    });
+
+  const handleAddEmpreendimento = async (data: CreateEmpreendimentoInput) => {
     await addEmpreendimento(data);
     setShowForm(false);
   };
 
-  const handleUpdateEmpreendimento = async (data: { nome: string; url: string; thumbnailUrl?: string; dataExpiracao: string; observacoes?: string }) => {
+  const handleUpdateEmpreendimento = async (data: CreateEmpreendimentoInput) => {
     if (!editingEmpreendimento) return;
     await updateEmpreendimento(editingEmpreendimento.id, data);
     setEditingEmpreendimento(null);
@@ -67,8 +79,7 @@ function App() {
     setEditingEmpreendimento(null);
   };
 
-  const expiringCount = empreendimentos.filter(l => l.status === 'expiring').length;
-  const expiredCount = empreendimentos.filter(l => l.status === 'expired').length;
+  const comCapaCount = empreendimentos.filter(item => item.thumbnailUrl).length;
 
   return (
     <div className={styles.app}>
@@ -93,21 +104,26 @@ function App() {
                   <span className={styles.statLabel}>Total</span>
                 </div>
                 <div className={`${styles.statCard} ${styles.statActive}`}>
-                  <span className={styles.statValue}>{empreendimentos.filter(l => l.status === 'active').length}</span>
-                  <span className={styles.statLabel}>Ativos</span>
+                  <span className={styles.statValue}>{comCapaCount}</span>
+                  <span className={styles.statLabel}>Com capa</span>
                 </div>
                 <div className={`${styles.statCard} ${styles.statWarning}`}>
-                  <span className={styles.statValue}>{expiringCount}</span>
-                  <span className={styles.statLabel}>Expirando em breve</span>
-                </div>
-                <div className={`${styles.statCard} ${styles.statDanger}`}>
-                  <span className={styles.statValue}>{expiredCount}</span>
-                  <span className={styles.statLabel}>Expirados</span>
+                  <span className={styles.statValue}>{empreendimentos.length - comCapaCount}</span>
+                  <span className={styles.statLabel}>Sem capa</span>
                 </div>
               </div>
 
               <div className={styles.actions}>
-                <FilterBar filter={filter} onFilterChange={setFilter} search={search} onSearchChange={setSearch} />
+                <FilterBar
+                  search={search}
+                  onSearchChange={setSearch}
+                  capa={capa}
+                  onCapaChange={setCapa}
+                  sort={sort}
+                  onSortChange={setSort}
+                  total={empreendimentos.length}
+                  shown={filteredEmpreendimentos.length}
+                />
                 <button className={styles.addButton} onClick={() => setShowForm(true)}>
                   + Novo Empreendimento
                 </button>
@@ -120,7 +136,6 @@ function App() {
                   <AdminCard
                     key={item.id}
                     empreendimento={item}
-                    onUpdate={updateEmpreendimento}
                     onDelete={deleteEmpreendimento}
                     onEdit={handleEdit}
                   />

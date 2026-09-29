@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { X, Plus, Calendar, Link as LinkIcon, Save, Image } from 'lucide-react';
+import { X, Plus, Link as LinkIcon, Save } from 'lucide-react';
 import { ThumbnailUpload } from './ThumbnailUpload';
 import { Empreendimento } from '../types';
 import styles from './EmpreendimentoForm.module.css';
@@ -9,7 +9,6 @@ interface EmpreendimentoFormProps {
     nome: string;
     url: string;
     thumbnailUrl?: string;
-    dataExpiracao: string;
     observacoes?: string;
   }) => Promise<void>;
   onClose: () => void;
@@ -21,9 +20,6 @@ export function EmpreendimentoForm({ onSubmit, onClose, editMode = false, initia
   const [nome, setNome] = useState(initialData?.nome || '');
   const [url, setUrl] = useState(initialData?.url || '');
   const [thumbnailUrl, setThumbnailUrl] = useState(initialData?.thumbnailUrl || '');
-  const [dataExpiracao, setDataExpiracao] = useState(
-    initialData?.dataExpiracao ? new Date(initialData.dataExpiracao).toISOString().split('T')[0] : ''
-  );
   const [observacoes, setObservacoes] = useState(initialData?.observacoes || '');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -44,10 +40,6 @@ export function EmpreendimentoForm({ onSubmit, onClose, editMode = false, initia
       setError('A URL deve ser um link do Autodesk (autode.sk)');
       return;
     }
-    if (!dataExpiracao) {
-      setError('Data de expiração é obrigatória');
-      return;
-    }
 
     try {
       setLoading(true);
@@ -55,7 +47,6 @@ export function EmpreendimentoForm({ onSubmit, onClose, editMode = false, initia
         nome: nome.trim(),
         url: url.trim(),
         thumbnailUrl: thumbnailUrl || undefined,
-        dataExpiracao: new Date(dataExpiracao).toISOString(),
         observacoes: observacoes.trim() || undefined
       });
     } catch (err) {
@@ -111,21 +102,6 @@ export function EmpreendimentoForm({ onSubmit, onClose, editMode = false, initia
               currentUrl={thumbnailUrl}
               onUpload={setThumbnailUrl}
               empreendimentoNome={nome}
-            />
-          </div>
-
-          <div className={styles.field}>
-            <label htmlFor="dataExpiracao">
-              <Calendar size={14} />
-              Data de Expiração
-            </label>
-            <input
-              id="dataExpiracao"
-              type="date"
-              value={dataExpiracao}
-              onChange={e => setDataExpiracao(e.target.value)}
-              min={new Date().toISOString().split('T')[0]}
-              className={styles.input}
             />
           </div>
 

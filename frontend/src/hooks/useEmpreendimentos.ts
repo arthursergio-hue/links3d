@@ -26,9 +26,7 @@ export function useEmpreendimentos() {
 
   const addEmpreendimento = async (data: CreateEmpreendimentoInput) => {
     const newItem = await api.createEmpreendimento(data);
-    setEmpreendimentos(prev => [...prev, newItem].sort((a, b) =>
-      new Date(a.dataExpiracao).getTime() - new Date(b.dataExpiracao).getTime()
-    ));
+    setEmpreendimentos(prev => [...prev, newItem].sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR')));
     return newItem;
   };
 

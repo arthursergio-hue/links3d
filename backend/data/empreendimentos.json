@@ -3,140 +3,136 @@
     "id": "1",
     "nome": "Santinho Spot",
     "url": "https://autode.sk/43d6Kk3",
-    "thumbnailUrl": "",
-    "dataExpiracao": "2026-06-17T16:16:47.515Z",
+    "thumbnailUrl": "/loading/santinho-spot.webp",
     "dataCriacao": "2026-05-18T15:49:56.047Z",
-    "ultimaAtualizacao": "2026-05-18T16:16:47.528Z",
-    "status": "expiring"
+    "ultimaAtualizacao": "2026-05-18T16:16:47.528Z"
   },
   {
     "id": "2",
     "nome": "Santo Antônio Spot",
     "url": "https://autode.sk/4wIJZCj",
-    "thumbnailUrl": "",
-    "dataExpiracao": "2026-06-17T15:49:56.047Z",
+    "thumbnailUrl": "/loading/santo-antonio-spot.webp",
     "dataCriacao": "2026-05-18T15:49:56.047Z",
-    "ultimaAtualizacao": "2026-05-18T15:49:56.047Z",
-    "status": "active"
+    "ultimaAtualizacao": "2026-05-18T15:49:56.047Z"
   },
   {
     "id": "3",
     "nome": "Natal Spot",
     "url": "https://autode.sk/4nDpPp6",
-    "thumbnailUrl": "",
-    "dataExpiracao": "2026-06-18T00:00:00.000Z",
+    "thumbnailUrl": "/loading/natal-spot.webp",
     "dataCriacao": "2026-05-19T00:00:00.000Z",
-    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z",
-    "status": "active"
+    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z"
   },
   {
     "id": "4",
     "nome": "Canas Beach Spot",
     "url": "https://autode.sk/3RzUAPH",
-    "thumbnailUrl": "",
-    "dataExpiracao": "2026-06-18T00:00:00.000Z",
+    "thumbnailUrl": "/loading/canas-beach-spot.webp",
     "dataCriacao": "2026-05-19T00:00:00.000Z",
-    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z",
-    "status": "active"
+    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z"
   },
   {
     "id": "5",
     "nome": "Novo Campeche Spot",
     "url": "https://autode.sk/4uWWNTB",
-    "thumbnailUrl": "",
-    "dataExpiracao": "2026-06-18T00:00:00.000Z",
+    "thumbnailUrl": "/loading/novo-campeche-spot.webp",
     "dataCriacao": "2026-05-19T00:00:00.000Z",
-    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z",
-    "status": "active"
+    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z"
   },
   {
     "id": "6",
     "nome": "Bonito Spot",
     "url": "https://autode.sk/3PBNdXg",
-    "thumbnailUrl": "",
-    "dataExpiracao": "2026-06-18T00:00:00.000Z",
+    "thumbnailUrl": "/loading/bonito-spot.webp",
     "dataCriacao": "2026-05-19T00:00:00.000Z",
-    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z",
-    "status": "active"
+    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z"
   },
   {
     "id": "7",
-    "nome": "Jureré Spot II",
+    "nome": "Jurerê Spot II",
     "url": "https://autode.sk/4wCAX9R",
-    "thumbnailUrl": "",
-    "dataExpiracao": "2026-06-18T00:00:00.000Z",
+    "thumbnailUrl": "/loading/jurere-spot-ii.webp",
     "dataCriacao": "2026-05-19T00:00:00.000Z",
-    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z",
-    "status": "active"
+    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z"
   },
   {
     "id": "8",
-    "nome": "Caragua Spot",
-    "url": "https://autode.sk/4dz2pht",
-    "thumbnailUrl": "",
-    "dataExpiracao": "2026-06-18T00:00:00.000Z",
+    "nome": "Caraguá Spot",
+    "url": "https://autode.sk/4dzJpht",
+    "thumbnailUrl": "/loading/caragua-spot.webp",
     "dataCriacao": "2026-05-19T00:00:00.000Z",
-    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z",
-    "status": "active"
+    "ultimaAtualizacao": "2026-09-29T14:29:05.000Z"
   },
   {
     "id": "9",
     "nome": "Bonito Spot II",
-    "url": "https://autode.sk/4ukkxg5",
-    "thumbnailUrl": "",
-    "dataExpiracao": "2026-06-18T00:00:00.000Z",
+    "url": "https://autode.sk/4ukKxg5",
+    "thumbnailUrl": "/loading/bonito-spot-ii.webp",
     "dataCriacao": "2026-05-19T00:00:00.000Z",
-    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z",
-    "status": "active"
+    "ultimaAtualizacao": "2026-09-29T14:29:05.000Z"
   },
   {
     "id": "10",
     "nome": "Itacaré Spot",
     "url": "https://autode.sk/4tNB1AS",
-    "thumbnailUrl": "",
-    "dataExpiracao": "2026-06-18T00:00:00.000Z",
+    "thumbnailUrl": "/loading/itacare-spot.webp",
     "dataCriacao": "2026-05-19T00:00:00.000Z",
-    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z",
-    "status": "active"
+    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z"
   },
   {
     "id": "11",
     "nome": "Barra Grande Spot",
     "url": "https://autode.sk/4tEBFAB",
-    "thumbnailUrl": "",
-    "dataExpiracao": "2026-06-18T00:00:00.000Z",
+    "thumbnailUrl": "/loading/barra-grande-spot.webp",
     "dataCriacao": "2026-05-19T00:00:00.000Z",
-    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z",
-    "status": "active"
+    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z"
   },
   {
     "id": "12",
     "nome": "Foz Spot",
     "url": "https://autode.sk/4uVyQ2r",
-    "thumbnailUrl": "",
-    "dataExpiracao": "2026-06-18T00:00:00.000Z",
+    "thumbnailUrl": "/loading/foz-spot.webp",
     "dataCriacao": "2026-05-19T00:00:00.000Z",
-    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z",
-    "status": "active"
+    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z"
   },
   {
     "id": "13",
     "nome": "Ponta das Canas Spot II",
     "url": "https://autode.sk/3PwPtiv",
-    "thumbnailUrl": "",
-    "dataExpiracao": "2026-06-18T00:00:00.000Z",
+    "thumbnailUrl": "/loading/ponta-das-canas-spot-ii.webp",
     "dataCriacao": "2026-05-19T00:00:00.000Z",
-    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z",
-    "status": "active"
+    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z"
   },
   {
     "id": "14",
-    "nome": "Jureré Spot III",
+    "nome": "Jurerê Spot III",
     "url": "https://autode.sk/3PSGQix",
-    "thumbnailUrl": "",
-    "dataExpiracao": "2026-06-18T00:00:00.000Z",
+    "thumbnailUrl": "/loading/jurere-spot-iii.webp",
     "dataCriacao": "2026-05-19T00:00:00.000Z",
-    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z",
-    "status": "active"
+    "ultimaAtualizacao": "2026-05-19T00:00:00.000Z"
+  },
+  {
+    "id": "15",
+    "nome": "Marista 144 Spot",
+    "url": "https://autode.sk/4uvmz1E",
+    "thumbnailUrl": "/loading/marista-144-spot.webp",
+    "dataCriacao": "2026-09-29T14:29:05.000Z",
+    "ultimaAtualizacao": "2026-09-29T14:29:05.000Z"
+  },
+  {
+    "id": "16",
+    "nome": "Novo Campeche Spot II",
+    "url": "https://autode.sk/3PnBNql",
+    "thumbnailUrl": "/loading/novo-campeche-spot-ii.webp",
+    "dataCriacao": "2026-09-29T14:29:05.000Z",
+    "ultimaAtualizacao": "2026-09-29T14:29:05.000Z"
+  },
+  {
+    "id": "17",
+    "nome": "Farol da Barra Spot",
+    "url": "https://autode.sk/4erxqUN",
+    "thumbnailUrl": "",
+    "dataCriacao": "2026-09-29T14:29:05.000Z",
+    "ultimaAtualizacao": "2026-09-29T14:29:05.000Z"
   }
 ]

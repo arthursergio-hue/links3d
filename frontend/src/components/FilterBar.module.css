@@ -70,21 +70,26 @@
   border-color: var(--primary);
 }
 
-.filterButton.active.active {
-  background: var(--success);
-  border-color: var(--success);
+.sortSelect {
+  padding: 12px 36px 12px 14px;
+  background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239E9E9E' stroke-width='2.5'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center;
+  appearance: none;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  color: var(--gray-700);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
 }
 
-.filterButton.active.expiring {
-  background: var(--warning);
-  border-color: var(--warning);
-  color: var(--white);
+.sortSelect:focus {
+  outline: none;
+  border-color: var(--accent);
 }
 
-.filterButton.active.expired {
-  background: var(--danger);
-  border-color: var(--danger);
-  color: var(--white);
+.count {
+  font-size: 0.85rem;
+  color: var(--gray-500);
 }
 
 @media (max-width: 700px) {

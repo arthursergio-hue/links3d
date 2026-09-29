@@ -16,10 +16,8 @@ export interface Empreendimento {
   nome: string;
   url: string;
   thumbnailUrl?: string;
-  dataExpiracao: string;
   dataCriacao: string;
   ultimaAtualizacao: string;
-  status: string;
   observacoes?: string;
 }
 
@@ -33,20 +31,16 @@ function loadData(): Empreendimento[] {
         nome: 'Santinho Spot',
         url: 'https://autode.sk/43d6Kk3',
         thumbnailUrl: '',
-        dataExpiracao: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(),
         dataCriacao: now,
-        ultimaAtualizacao: now,
-        status: 'expiring'
+        ultimaAtualizacao: now
       },
       {
         id: '2',
         nome: 'Santo Antônio Spot',
         url: 'https://autode.sk/4wIJZCj',
         thumbnailUrl: '',
-        dataExpiracao: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
         dataCriacao: now,
-        ultimaAtualizacao: now,
-        status: 'active'
+        ultimaAtualizacao: now
       }
     ];
     saveData(sampleData);
