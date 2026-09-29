@@ -1,0 +1,278 @@
+[
+  {
+    "nome": "Novo Campeche Spot II",
+    "cidade": "Florianópolis",
+    "bairro": "Campeche",
+    "imagem": "/loading/novo-campeche-spot-ii.webp"
+  },
+  {
+    "nome": "Jurerê Spot II",
+    "cidade": "Florianópolis",
+    "bairro": "Jurerê",
+    "imagem": "/loading/jurere-spot-ii.webp"
+  },
+  {
+    "nome": "Jurerê Spot III",
+    "cidade": "Florianópolis",
+    "bairro": "Jurerê",
+    "imagem": "/loading/jurere-spot-iii.webp"
+  },
+  {
+    "nome": "Bonito Spot II",
+    "cidade": "Bonito",
+    "bairro": "Centro",
+    "imagem": "/loading/bonito-spot-ii.webp"
+  },
+  {
+    "nome": "Ponta das Canas Spot II",
+    "cidade": "Florianópolis",
+    "bairro": "Ponta das Canas",
+    "imagem": "/loading/ponta-das-canas-spot-ii.webp"
+  },
+  {
+    "nome": "Barra Grande Spot",
+    "cidade": "Maraú",
+    "bairro": "Barra Grande",
+    "imagem": "/loading/barra-grande-spot.webp"
+  },
+  {
+    "nome": "Natal Spot",
+    "cidade": "Natal",
+    "bairro": "Ponta Negra",
+    "imagem": "/loading/natal-spot.webp"
+  },
+  {
+    "nome": "Caraguá Spot",
+    "cidade": "Caraguatatuba",
+    "bairro": "Martim de Sá",
+    "imagem": "/loading/caragua-spot.webp"
+  },
+  {
+    "nome": "Itacaré Spot",
+    "cidade": "Itacaré",
+    "bairro": "Conchas do Mar",
+    "imagem": "/loading/itacare-spot.webp"
+  },
+  {
+    "nome": "Marista 144 Spot",
+    "cidade": "Goiânia",
+    "bairro": "Setor Marista",
+    "imagem": "/loading/marista-144-spot.webp"
+  },
+  {
+    "nome": "Vistas de Anitá I",
+    "cidade": "Anitápolis",
+    "bairro": "Rio dos Pinheiros",
+    "imagem": "/loading/vistas-de-anita-i.webp"
+  },
+  {
+    "nome": "Batel Spot",
+    "cidade": "Curitiba",
+    "bairro": "Batel",
+    "imagem": "/loading/batel-spot.webp"
+  },
+  {
+    "nome": "Bonito Spot",
+    "cidade": "Bonito",
+    "bairro": "Alvorada",
+    "imagem": "/loading/bonito-spot.webp"
+  },
+  {
+    "nome": "Cachoeira Beach Spot",
+    "cidade": "Florianópolis",
+    "bairro": "Cachoeira do Bom Jesus",
+    "imagem": "/loading/cachoeira-beach-spot.webp"
+  },
+  {
+    "nome": "Cachoeira Spot",
+    "cidade": "Florianópolis",
+    "bairro": "Cachoeira do Bom Jesus",
+    "imagem": "/loading/cachoeira-spot.webp"
+  },
+  {
+    "nome": "Campeche Spot",
+    "cidade": "Florianópolis",
+    "bairro": "Campeche",
+    "imagem": "/loading/campeche-spot.webp"
+  },
+  {
+    "nome": "Canas Beach Spot",
+    "cidade": "Florianópolis",
+    "bairro": "Canasvieiras",
+    "imagem": "/loading/canas-beach-spot.webp"
+  },
+  {
+    "nome": "Canasvieiras Spot",
+    "cidade": "Florianópolis",
+    "bairro": "Canasvieiras",
+    "imagem": "/loading/canasvieiras-spot.webp"
+  },
+  {
+    "nome": "Foz Spot",
+    "cidade": "Foz do Iguaçu",
+    "bairro": "Centro",
+    "imagem": "/loading/foz-spot.webp"
+  },
+  {
+    "nome": "Ilha do Campeche II Spot",
+    "cidade": "Florianópolis",
+    "bairro": "Campeche",
+    "imagem": "/loading/ilha-do-campeche-ii-spot.webp"
+  },
+  {
+    "nome": "Ilha do Campeche Spot",
+    "cidade": "Florianópolis",
+    "bairro": "Campeche",
+    "imagem": "/loading/ilha-do-campeche-spot.webp"
+  },
+  {
+    "nome": "Imbassaí Spot",
+    "cidade": "Mata de São João",
+    "bairro": "Imbassaí",
+    "imagem": "/loading/imbassai-spot.webp"
+  },
+  {
+    "nome": "Ingleses Spot",
+    "cidade": "Florianópolis",
+    "bairro": "Ingleses",
+    "imagem": "/loading/ingleses-spot.webp"
+  },
+  {
+    "nome": "Japaratinga Spot",
+    "cidade": "Japaratinga",
+    "bairro": "Boqueirão",
+    "imagem": "/loading/japaratinga-spot.webp"
+  },
+  {
+    "nome": "Jurerê Beach Spot",
+    "cidade": "Florianópolis",
+    "bairro": "Jurerê",
+    "imagem": "/loading/jurere-beach-spot.webp"
+  },
+  {
+    "nome": "Lagoa Spot",
+    "cidade": "Florianópolis",
+    "bairro": "Lagoa da Conceição",
+    "imagem": "/loading/lagoa-spot.webp"
+  },
+  {
+    "nome": "Meireles Spot",
+    "cidade": "Fortaleza",
+    "bairro": "Meireles",
+    "imagem": "/loading/meireles-spot.webp"
+  },
+  {
+    "nome": "Morro das Pedras Spot",
+    "cidade": "Florianópolis",
+    "bairro": "Morro das Pedras",
+    "imagem": "/loading/morro-das-pedras-spot.webp"
+  },
+  {
+    "nome": "Novo Campeche Spot",
+    "cidade": "Florianópolis",
+    "bairro": "Campeche",
+    "imagem": "/loading/novo-campeche-spot.webp"
+  },
+  {
+    "nome": "Novo Campeche Spot III",
+    "cidade": "Florianópolis",
+    "bairro": "Campeche",
+    "imagem": "/loading/novo-campeche-spot-iii.webp"
+  },
+  {
+    "nome": "Ponta das Canas Spot",
+    "cidade": "Florianópolis",
+    "bairro": "Ponta das Canas",
+    "imagem": "/loading/ponta-das-canas-spot.webp"
+  },
+  {
+    "nome": "Rosa Norte Spot",
+    "cidade": "Imbituba",
+    "bairro": "Ibiraquera",
+    "imagem": "/loading/rosa-norte-spot.webp"
+  },
+  {
+    "nome": "Rosa Spot",
+    "cidade": "Imbituba",
+    "bairro": "Ibiraquera",
+    "imagem": "/loading/rosa-spot.webp"
+  },
+  {
+    "nome": "Rosa Sul Spot",
+    "cidade": "Imbituba",
+    "bairro": "Ibiraquera",
+    "imagem": "/loading/rosa-sul-spot.webp"
+  },
+  {
+    "nome": "Salvador Spot",
+    "cidade": "Salvador",
+    "bairro": "Barra",
+    "imagem": "/loading/salvador-spot.webp"
+  },
+  {
+    "nome": "Santinho Spot",
+    "cidade": "Florianópolis",
+    "bairro": "Santinho",
+    "imagem": "/loading/santinho-spot.webp"
+  },
+  {
+    "nome": "Santo Antônio Spot",
+    "cidade": "Florianópolis",
+    "bairro": "Sambaqui",
+    "imagem": "/loading/santo-antonio-spot.webp"
+  },
+  {
+    "nome": "Sul da Ilha Spot",
+    "cidade": "Florianópolis",
+    "bairro": "Campeche",
+    "imagem": "/loading/sul-da-ilha-spot.webp"
+  },
+  {
+    "nome": "Trancoso Spot",
+    "cidade": "Porto Seguro",
+    "bairro": "Trancoso",
+    "imagem": "/loading/trancoso-spot.webp"
+  },
+  {
+    "nome": "Urubici Spot",
+    "cidade": "Urubici",
+    "bairro": "Esquina",
+    "imagem": "/loading/urubici-spot.webp"
+  },
+  {
+    "nome": "Urubici Spot II",
+    "cidade": "Urubici",
+    "bairro": "Traçado",
+    "imagem": "/loading/urubici-spot-ii.webp"
+  },
+  {
+    "nome": "Vistas de Anitá II",
+    "cidade": "Anitápolis",
+    "bairro": "Rio dos Pinheiros",
+    "imagem": "/loading/vistas-de-anita-ii.webp"
+  },
+  {
+    "nome": "Barra Spot",
+    "cidade": "Florianópolis",
+    "bairro": "Barra da Lagoa",
+    "imagem": "/loading/barra-spot.webp"
+  },
+  {
+    "nome": "Jurerê Spot",
+    "cidade": "Florianópolis",
+    "bairro": "Jurerê",
+    "imagem": "/loading/jurere-spot.webp"
+  },
+  {
+    "nome": "Penha Spot",
+    "cidade": "Penha",
+    "bairro": "Praia da Armação",
+    "imagem": "/loading/penha-spot.webp"
+  },
+  {
+    "nome": "Vistas de Anitá III",
+    "cidade": "Anitápolis",
+    "bairro": "Rio dos Pinheiros",
+    "imagem": "/loading/vistas-de-anita-iii.webp"
+  }
+]

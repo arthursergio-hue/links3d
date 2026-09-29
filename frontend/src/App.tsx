@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Header } from './components/Header';
 import { ClienteCard } from './components/ClienteCard';
 import { AdminCard } from './components/AdminCard';
@@ -7,9 +7,14 @@ import { FilterBar } from './components/FilterBar';
 import { LoginModal } from './components/LoginModal';
 import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
+import { LoadingScreen } from './components/LoadingScreen';
 import { useEmpreendimentos } from './hooks/useEmpreendimentos';
 import { Empreendimento } from './types';
 import styles from './App.module.css';
+
+// Tempo mínimo da tela de carregamento, para o slideshow não piscar quando a API responde rápido.
+const MIN_SPLASH_MS = 2800;
+const SPLASH_EXIT_MS = 600;
 
 function App() {
   const { empreendimentos, loading, error, addEmpreendimento, updateEmpreendimento, deleteEmpreendimento, refresh } = useEmpreendimentos();
@@ -19,6 +24,23 @@ function App() {
   const [showLogin, setShowLogin] = useState(false);
   const [filter, setFilter] = useState<'all' | 'active' | 'expiring' | 'expired'>('all');
   const [search, setSearch] = useState('');
+  const [minSplashDone, setMinSplashDone] = useState(false);
+  const [splash, setSplash] = useState<'visible' | 'exiting' | 'hidden'>('visible');
+
+  useEffect(() => {
+    const timer = setTimeout(() => setMinSplashDone(true), MIN_SPLASH_MS);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (splash === 'visible' && !loading && minSplashDone) setSplash('exiting');
+  }, [splash, loading, minSplashDone]);
+
+  useEffect(() => {
+    if (splash !== 'exiting') return;
+    const timer = setTimeout(() => setSplash('hidden'), SPLASH_EXIT_MS);
+    return () => clearTimeout(timer);
+  }, [splash]);
 
   const filteredEmpreendimentos = empreendimentos.filter(item => {
     const matchesFilter = filter === 'all' || item.status === filter;
@@ -47,15 +69,6 @@ function App() {
 
   const expiringCount = empreendimentos.filter(l => l.status === 'expiring').length;
   const expiredCount = empreendimentos.filter(l => l.status === 'expired').length;
-
-  if (loading) {
-    return (
-      <div className={styles.loading}>
-        <div className={styles.spinner}></div>
-        <p>Carregando...</p>
-      </div>
-    );
-  }
 
   return (
     <div className={styles.app}>
@@ -139,6 +152,8 @@ function App() {
 
       <Footer />
       <WhatsAppButton />
+
+      {splash !== 'hidden' && <LoadingScreen exiting={splash === 'exiting'} />}
 
       {showForm && (
         <EmpreendimentoForm

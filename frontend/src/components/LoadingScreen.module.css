@@ -1,0 +1,216 @@
+.screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #05070a;
+  color: var(--white);
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.exiting {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* ---------- Slideshow ---------- */
+.slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.slide {
+  position: absolute;
+  inset: -2%;
+  background-size: cover;
+  background-position: center;
+  animation: slideIn 1.4s ease both, kenburns 9s ease-out forwards;
+  will-change: opacity, transform;
+}
+
+.slideActive {
+  z-index: 1;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes kenburns {
+  from { transform: scale(1.12) translate3d(1.5%, 1%, 0); }
+  to   { transform: scale(1) translate3d(0, 0, 0); }
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, rgba(5, 7, 10, 0.2) 0%, rgba(5, 7, 10, 0.6) 100%),
+    linear-gradient(180deg, rgba(5, 7, 10, 0.55) 0%, rgba(5, 7, 10, 0.1) 35%, rgba(5, 7, 10, 0.2) 60%, rgba(5, 7, 10, 0.9) 100%);
+}
+
+/* ---------- Content ---------- */
+.content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 56px;
+}
+
+.logo {
+  height: 30px;
+  width: auto;
+  align-self: flex-start;
+  filter: brightness(0) invert(1);
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.1s forwards;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.25s forwards;
+}
+
+.title {
+  max-width: 100%;
+  font-size: clamp(1.9rem, 4.2vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.4s forwards;
+}
+
+.progress {
+  position: relative;
+  width: min(220px, 60vw);
+  height: 2px;
+  margin-top: 14px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 2px;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.55s forwards;
+}
+
+.progressBar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-light), var(--white));
+  animation: sweep 1.6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes sweep {
+  from { left: -40%; }
+  to   { left: 100%; }
+}
+
+.status {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.7);
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.65s forwards;
+}
+
+/* ---------- Caption ---------- */
+.caption {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 52px;
+}
+
+.captionInner {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 14px;
+  border-left: 2px solid var(--accent);
+  animation: captionIn 0.8s ease forwards;
+}
+
+.captionName {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.captionPlace {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.04em;
+}
+
+.counter {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.55);
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes captionIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 640px) {
+  .content {
+    padding: 28px 20px;
+  }
+
+  .logo {
+    height: 24px;
+  }
+
+  .title {
+    font-size: 1.65rem;
+  }
+
+  .title br {
+    display: none;
+  }
+
+  .captionName {
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide {
+    animation: slideIn 1.4s ease both;
+  }
+
+  .progressBar {
+    animation-duration: 3s;
+  }
+}
